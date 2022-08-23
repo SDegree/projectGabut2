@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BUKA LINKNYA!</title>
+
+    <style>
+      html {
+        background-color: black;
+      }
+
+      .thumnail {
+        margin: 70px 10px;
+        background-color: white;
+        opacity: 0.8;
+        border-radius: 10px;
+      }
+
+      p {
+        padding: 15px 10px;
+        color: black;
+        text-align: center;
+        font-size: 20px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+
+      .tombol {
+        text-align: center;
+        padding: 10px;
+        margin: 0 28%;
+      }
+
+      .hiden {
+        visibility: hidden;
+      }
+
+      .tengah {
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="thumnail hiden">
+      <p id="p"></p>
+    </div>
+    <div class="tengah">
+      <button class="tombol" onclick="playAudio()">PENCET INI!</button>
+    </div>
+    <script>
+      let i = 0;
+      const txt = "I HAVE CRUSH ON YOU";
+
+      const speed = 100;
+
+      document.onreadystatechange = function () {
+        if (document.readyState === "complete") {
+        }
+      };
+
+      var el = document.getElementById("audioNotifikasi");
+      function playAudio() {
+        const thumnail = document.querySelector(".thumnail");
+        thumnail.classList.remove("hiden");
+        // el.play();
+        function typeWinter() {
+          if (i < txt.length) {
+            document.getElementById("p").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWinter, speed);
+          }
+        }
+        typeWinter();
+      }
+    </script>
+  </body>
+</html>
